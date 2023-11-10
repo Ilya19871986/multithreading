@@ -21,7 +21,6 @@ public class CreateWayThread {
      */
     public void way1() {
         Thread thread = new Thread(new ExampleThread1());
-        thread.setDaemon(true);
         thread.start();
         System.out.println("Главный поток завершён...");
     }
@@ -52,7 +51,7 @@ public class CreateWayThread {
     }
 
     /**
-     * Способ 2
+     * Способ 3
      *
      * Создать потомка класса Thread и переопределить его метод run().
      */
