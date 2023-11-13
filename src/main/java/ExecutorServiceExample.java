@@ -25,7 +25,7 @@ public class ExecutorServiceExample {
      * 1. newFixedThreadPool
      * Запуск задач Runnable
      */
-    public void runFixedThreadPollRunnable() {
+    public void runFixedThreadPollRunnable() throws InterruptedException {
         // фабричный метод создания
         ExecutorService service = Executors.newFixedThreadPool(3);
         service.submit(() -> action("runnableTask1"));
@@ -34,6 +34,7 @@ public class ExecutorServiceExample {
         // эта задача будет выполняться, когда освободится хотя бы один поток в ThreadPoll
         service.submit(() -> action("runnableTask4"));
         service.shutdown(); // уничтожение ExecutorService (после завершения всех потоков)
+        Thread.sleep(5000);
     }
 
 }
